@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>
+        Info Setting CS2
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+        Info Setting CS2
+    </h1>
+
+    <!-- Upload form ALWAYS visible -->
+
+    <form
+        id="uploadForm"
+        enctype="multipart/form-data"
+    >
+
+        <input
+            type="file"
+            name="demo"
+            id="fileInput"
+            accept=".dem"
+        >
+
+        <label
+            for="fileInput"
+            class="dropzone"
+        >
+
+            <div class="drop-title">
+                Drop your demo file here
+            </div>
+
+            <div class="drop-sub">
+                or click to browse (.dem)
+            </div>
+
+        </label>
+
+    </form>
+
+    <!-- Dynamic result -->
+
+    <div id="result"></div>
+
+</div>
+
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+{% for p in players %}
+
+<div class="card">
+
+    <!-- Player name -->
+
+    <div class="player-name">
+        {{ p.name }}
+    </div>
+
+    <!-- Steam profile -->
+
+    <div class="steamid">
+
+        Steam ID:
+
+        <a
+            href="https://steamcommunity.com/profiles/{{ p.steamid }}"
+            target="_blank"
+        >
+            {{ p.steamid }}
+        </a>
+
+    </div>
+
+    <!-- Viewmodel -->
+
+    <div class="section">
+        Viewmodel
+    </div>
+
+    <div class="grid">
+
+        <div class="box">
+
+            <span>FOV</span>
+
+            {{ p.fov }}
+
+        </div>
+
+        <div class="box">
+
+            <span>X =</span>
+
+            {{ p.x }}
+
+        </div>
+
+        <div class="box">
+
+            <span>Y =</span>
+
+            {{ p.y }}
+
+        </div>
+
+        <div class="box">
+
+            <span>Z =</span>
+
+            {{ p.z }}
+
+        </div>
+
+    </div>
+
+    <!-- Viewmodel command -->
+
+    <div
+        class="code"
+        id="vm{{ loop.index }}"
+    >
+viewmodel_fov {{ p.fov }}; viewmodel_offset_x {{ p.x }}; viewmodel_offset_y {{ p.y }}; viewmodel_offset_z {{ p.z }}; viewmodel_presetpos 2; cl_prefer_lefthanded {{ 'true' if p.lefthand else 'false' }};
+    </div>
+
+    <button
+        onclick="copy('vm{{ loop.index }}', this)"
+    >
+        Copy Viewmodel
+    </button>
+
+    <!-- Crosshair -->
+
+    <div class="section">
+        Crosshair
+    </div>
+
+    <div
+        class="code crosshair"
+        id="ch{{ loop.index }}"
+    >
+        {{ p.crosshair }}
+    </div>
+
+    <button
+        onclick="copy('ch{{ loop.index }}', this)"
+    >
+        Copy Crosshair
+    </button>
+
+</div>
+
+{% endfor %}
