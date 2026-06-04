@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 from demoparser2 import DemoParser
 import tempfile
 import os
@@ -177,6 +177,20 @@ def parse_demo():
             except:
                 pass
 
+@app.route("/robots.txt")
+def robots():
+    return send_from_directory("static", "robots.txt")
+
+@app.route("/sitemap.xml")
+def sitemap():
+    return send_from_directory("static", "sitemap.xml")
+
 
 if __name__ == "__main__":
-    app.run()
+
+    app.run(
+        host="0.0.0.0",
+        port=5000,
+        debug=False
+    )
+
