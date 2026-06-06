@@ -3,63 +3,93 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    
-    <meta name="description" content="Info Setting CS2 lets you upload a Counter-Strike 2 demo and instantly extract the exact crosshair and viewmodel of any player in the match.">    
+<meta charset="UTF-8">
 
-    <meta name="robots" content="index,follow">
+<meta name="description" content="Info Setting CS2 lets you upload a Counter-Strike 2 demo and instantly extract the exact crosshair and viewmodel of any player in the match.">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index,follow">
 
-    <meta property="og:title" content="Info Setting CS2">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:description" content="Extract the exact crosshair and viewmodel of any player from a Counter-Strike 2 demo.">
-    
-    <meta property="og:url" content="https://infosettingcs2.online">
-    
-    <meta property="og:type" content="website">
+<meta property="og:title" content="Info Setting CS2">
 
-    <link rel="canonical" href="https://infosettingcs2.online/">
+<meta property="og:description" content="Extract the exact crosshair and viewmodel of any player from a Counter-Strike 2 demo.">
 
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+<meta property="og:url" content="https://infosettingcs2.online">
 
-    <title>
-    	Info Setting CS2 - CS2 Demo Settings Extractor
-    </title>
+<meta property="og:type" content="website">
 
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='style.css') }}"
-    >
+<link rel="canonical" href="https://infosettingcs2.online/">
+
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+
+<title>
+    Info Setting CS2 - CS2 Demo Settings Extractor
+</title>
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}"
+>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EMSX6W3J7G"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-EMSX6W3J7G');
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-EMSX6W3J7G');
 </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5148710555577944"
-     crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 
 </head>
 
 <body>
+
+<nav class="navbar">
+
+    <a href="/" class="logo">
+
+        <img
+            src="{{ url_for('static', filename='logo.png') }}"
+            alt="Info Setting CS2"
+        >
+
+        <span>
+            Info Setting CS2
+        </span>
+
+    </a>
+
+    <div class="nav-links">
+
+        <a href="#" onclick="openInstructions(); return false;">
+            Instructions
+        </a>
+
+        <a href="#" onclick="openSupport(); return false;">
+            Support
+        </a>
+
+    </div>
+
+</nav>
 
 <div class="container">
 
     <h1>
         Info Setting CS2
     </h1>
-    
-    <p class="subtitle">
-    Extract the exact crosshair and viewmodel settings of any player
-    <span class="line-break">from a Counter-Strike 2 demo.</span>
-    </p>
 
-    <!-- Upload form ALWAYS visible -->
+    <p class="subtitle">
+        Extract the exact crosshair and viewmodel settings of any player
+        <span class="line-break">
+            from a Counter-Strike 2 demo.
+        </span>
+    </p>
 
     <form
         id="uploadForm"
@@ -90,9 +120,54 @@
 
     </form>
 
-    <!-- Dynamic result -->
-
     <div id="result"></div>
+
+</div>
+
+<div id="instructionsModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeInstructions()">
+            &times;
+        </span>
+
+        <h2>
+            Instructions
+        </h2>
+
+        <ol>
+            <li>Download a Counter-Strike 2 demo.</li>
+            <li>Upload the .dem file.</li>
+            <li>Choose any player and instantly extract their settings.</li>
+            <li>Copy the crosshair or viewmodel settings.</li>
+        </ol>
+
+    </div>
+
+</div>
+
+<div id="supportModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeSupport()">
+            &times;
+        </span>
+
+        <h2>
+            Support
+        </h2>
+
+        <p>
+            If this tool helped you, consider supporting future development.
+        </p>
+
+        <p>
+            Donations coming soon.
+        </p>
+
+    </div>
 
 </div>
 
@@ -101,4 +176,5 @@
 ></script>
 
 </body>
+
 </html>

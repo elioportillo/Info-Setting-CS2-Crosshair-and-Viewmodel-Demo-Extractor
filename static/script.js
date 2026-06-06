@@ -123,3 +123,20 @@ window.onload = function () {
         input.value = "";
     };
 };
+
+function openInstructions() {
+    document.getElementById("instructionsModal").style.display = "flex";
+}
+
+function closeInstructions() {
+    document.getElementById("instructionsModal").style.display = "none";
+}
+
+function openSupport() {
+    document.getElementById("supportModal").style.display = "flex";
+}
+
+function closeSupport() {
+    document.getElementById("supportModal").style.display = "none";
+}
+
